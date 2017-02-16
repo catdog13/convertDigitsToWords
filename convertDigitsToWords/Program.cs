@@ -40,27 +40,27 @@ namespace convertDigitsToWords
                     if (intConvertNumber > 1000) // for numbers greter than 1000
                     {
                         int thousands = intConvertNumber / 1000;
-                        outString = string.Concat(outString, string.Format("{0} Thousand ", ones[thousands]));
+                        outString = string.Concat(outString, $"{ones[thousands]} Thousand ");
                         intConvertNumber = intConvertNumber % 1000;
                     }
                     if (intConvertNumber <= 999 && intConvertNumber >= 100) // for number between 999 and 100
                     {
                         int hundreds = intConvertNumber / 100;
-                        outString = string.Concat(outString, string.Format("{0} Hundred ", ones[hundreds]));
+                        outString = string.Concat(outString, $"{ones[hundreds]} Hundred ");
                         intConvertNumber = intConvertNumber % 100;
                     }
                     if (intConvertNumber <= 99 && intConvertNumber >= 20) // for numbers between 99 and 20
                     {
                         int lessHundred = intConvertNumber / 10;
-                        outString = string.Concat(outString, string.Format("{0} ", tens[lessHundred]));
+                        outString = string.Concat(outString, $"{tens[lessHundred]} ");
                         intConvertNumber = intConvertNumber % 10;
                     }
                     if (intConvertNumber <= 19 && intConvertNumber > 0) // for numbers bwetween 19 and 0
                     {
                         int lessTwenty = intConvertNumber / 1;
-                        outString = string.Concat(outString, string.Format("{0} ", ones[lessTwenty]));
+                        outString = string.Concat(outString, $"{ones[lessTwenty]} ");
                     }
-                    Console.WriteLine("{0}dollars", outString); // outputs the sting that was built
+                    Console.WriteLine($"{outString}dollars"); // outputs the sting that was built
                 }
                 // do this things if it isn't a valid input
                 else
